@@ -29,7 +29,7 @@ const ButtonPrimary = (props: ButtonPrimaryProps) => {
       py={`16px`}
       rounded={`full`}
       fontSize={`14px`}
-      fontWeight={`400`}
+      fontWeight={`bold`}
       cursor={`pointer`}
     >
       <Text>{title}</Text>

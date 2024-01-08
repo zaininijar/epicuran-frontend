@@ -63,7 +63,7 @@ const SidebarMenuDesktop = (props: Props) => {
         </Box>
         <VStack
           alignItems={`start`}
-          gap={`32px`}
+          gap={`24px`}
           w={`251px`}
           marginTop={`22px`}
         >
