@@ -20,21 +20,14 @@ type Props = {};
 
 const SidebarInfoDesktop = (props: Props) => {
   return (
-    <VStack
-      borderLeft={`1px solid #EFF3F4`}
-      height={`100vh`}
-      paddingY={`1.5rem`}
-      px={`32px`}
-    >
-      <InputSearch />
+    <VStack height={`100vh`} paddingY={`1.5rem`} px={`32px`} mt={`38px`}>
       <VStack
         alignItems={`start`}
         gap={`25px`}
-        w={`165px`}
+        w={`316px`}
         marginTop={`22px`}
         bg={`#FFFBF3`}
         border={`1px solid #FFFBF3`}
-        width={`full`}
         px={`16px`}
         py={`13px`}
         rounded={`16px`}

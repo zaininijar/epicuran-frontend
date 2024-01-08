@@ -17,55 +17,71 @@ type Props = {};
 const SidebarMenuDesktop = (props: Props) => {
   return (
     <VStack
-      borderRight={`1px solid #EFF3F4`}
-      width={`300px`}
+      width={`263px`}
       height={`100vh`}
+      pl={`12px`}
       paddingY={`1.5rem`}
+      position={`relative`}
     >
-      <Box position={`relative`} height={`42px`} width={`181px`}>
-        <Image
-          width={181}
-          height={42}
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-          src={Logo}
-          alt="Epicuran Logo"
-        />
-      </Box>
-      <VStack alignItems={`start`} gap={`32px`} w={`165px`} marginTop={`22px`}>
-        <HStack gap={`20px`}>
-          <HomeIcon />
-          <Text fontSize={`20px`}>Home</Text>
-        </HStack>
-        <HStack gap={`20px`}>
-          <ExploreIcon />
-          <Text fontSize={`20px`}>Explore</Text>
-        </HStack>
-        <HStack gap={`20px`}>
-          <NotificationIcon />
-          <Text fontSize={`20px`}>Notifications</Text>
-        </HStack>
-        <HStack gap={`20px`}>
-          <SavedIcon />
-          <Text fontSize={`20px`}>Saved</Text>
-        </HStack>
-        <HStack gap={`20px`}>
-          <ProfileIcon />
-          <Text fontSize={`20px`}>Profile</Text>
-        </HStack>
-        <HStack gap={`20px`}>
-          <MoreIcon />
-          <Text fontSize={`20px`}>More</Text>
-        </HStack>
-      </VStack>
-      <Stack
-        mt={`38px`}
-        shadow={`box-shadow: 0px 8px 28px 0px rgba(0, 0, 0, 0.08);`}
+      <VStack
+        position={`fixed`}
+        width={`251px`}
+        minH={`full`}
+        pt={`12px`}
+        top={`0`}
+        borderRight={`1px solid #EFF3F4`}
+        pr={`12px`}
       >
-        <ButtonPrimary title="Post Recipe" />
-      </Stack>
+        <Box position={`relative`} height={`42px`} width={`181px`}>
+          <Image
+            width={181}
+            height={42}
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+            src={Logo}
+            alt="Epicuran Logo"
+          />
+        </Box>
+        <VStack
+          alignItems={`start`}
+          gap={`32px`}
+          w={`165px`}
+          marginTop={`22px`}
+        >
+          <HStack gap={`20px`}>
+            <HomeIcon w={`26px`} h={`26px`} />
+            <Text fontSize={`20px`}>Home</Text>
+          </HStack>
+          <HStack gap={`20px`}>
+            <ExploreIcon w={`26px`} h={`26px`} />
+            <Text fontSize={`20px`}>Explore</Text>
+          </HStack>
+          <HStack gap={`20px`}>
+            <NotificationIcon w={`26px`} h={`26px`} />
+            <Text fontSize={`20px`}>Notifications</Text>
+          </HStack>
+          <HStack gap={`20px`}>
+            <SavedIcon w={`26px`} h={`26px`} />
+            <Text fontSize={`20px`}>Saved</Text>
+          </HStack>
+          <HStack gap={`20px`}>
+            <ProfileIcon w={`26px`} h={`26px`} />
+            <Text fontSize={`20px`}>Profile</Text>
+          </HStack>
+          <HStack gap={`20px`}>
+            <MoreIcon w={`26px`} h={`26px`} />
+            <Text fontSize={`20px`}>More</Text>
+          </HStack>
+        </VStack>
+        <Stack
+          mt={`38px`}
+          shadow={`box-shadow: 0px 8px 28px 0px rgba(0, 0, 0, 0.08);`}
+        >
+          <ButtonPrimary title="Post Recipe" />
+        </Stack>
+      </VStack>
     </VStack>
   );
 };

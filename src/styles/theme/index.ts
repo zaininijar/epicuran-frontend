@@ -6,7 +6,6 @@ import { typography } from './foundations/typography';
 export const theme = extendTheme({
   config,
   ...foundations,
-  ...typography,
   // components,
   styles: {
     global: {
@@ -15,11 +14,5 @@ export const theme = extendTheme({
         color: "gray.800",
       },
     },
-  },
-  colors: {
-    dark: '#03001C',
-    primary: '#301E67',
-    secondary: '#5B8FB9',
-    light: '#B6EADA',
   },
 });

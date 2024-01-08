@@ -9,32 +9,26 @@ import {
   LocIcon,
   LinkIcon,
   CalendarIcon,
+  PostCard,
+  HeaderProfile,
 } from "@/components";
 import { ProfileListData } from "@/components/general/sidebar-info/data";
 import { Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import React from "react";
 type Props = {};
 
 const ProfileUserDesktop = (props: Props) => {
-  const router = useRouter();
-
   return (
-    <VStack alignItems={`start`} gap={0} maxW={`598px`}>
-      <HStack gap={`36px`} py={`14px`} px={`16px`}>
-        <Box cursor={`pointer`} onClick={() => router.back()}>
-          <ArrowLeftIcon w={`20px`} h={`20px`} />
-        </Box>
-        <Box>
-          <Text fontSize={`20px`} fontWeight={`bold`}>
-            Juna Rorimpandey
-          </Text>
-          <Text fontSize={`13px`} fontWeight={`400`} mt={`3px`}>
-            743 Recipe
-          </Text>
-        </Box>
-      </HStack>
+    <VStack
+      alignItems={`start`}
+      gap={0}
+      maxW={`598px`}
+      position={`relative`}
+      mt={`65px`}
+      borderRight={`1px solid #EFF3F4`}
+    >
+      <HeaderProfile />
       <Box position={`relative`} w={`100%`} height={`199px`}>
         <Image
           style={{
@@ -73,7 +67,12 @@ const ProfileUserDesktop = (props: Props) => {
             alt="Profile Cover Images | Epicuran"
           ></Image>
         </Box>
-        <Stack rounded={`full`} border={`1px solid #CFD9DE`} p={`8px`}>
+        <Stack
+          rounded={`full`}
+          border={`1px solid #CFD9DE`}
+          p={`8px`}
+          color={`#FF6C22`}
+        >
           <Dotted3Icon width={`20px`} height={`20px`} />
         </Stack>
         <Stack rounded={`full`} border={`1px solid #CFD9DE`} p={`8px`}>
@@ -175,6 +174,10 @@ const ProfileUserDesktop = (props: Props) => {
         </Text>
         <Box bg={`#FFA800`} h={`4px`} w={`56px`} borderRadius={`9999`}></Box>
       </VStack>
+      <PostCard isPinned />
+      <PostCard />
+      <PostCard />
+      <PostCard />
     </VStack>
   );
 };

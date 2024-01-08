@@ -18,7 +18,7 @@ const InputSearch = (props: Props) => {
       <SearchIcon w={`24px`} h={`24px`} />
       <Input
         type="search"
-        placeholder="Phone number"
+        placeholder="Search Epicuran"
         border={`0`}
         _placeholder={{ color: "#536471" }}
         _focus={{ outline: "none", ring: "none" }}
