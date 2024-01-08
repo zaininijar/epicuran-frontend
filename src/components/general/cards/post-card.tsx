@@ -1,7 +1,6 @@
 import { Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
-import { ProfilePicture } from "../images";
 import {
   Dotted3Icon,
   CommentIcon,
@@ -11,52 +10,53 @@ import {
 import Link from "next/link";
 import { SavedIcon } from "../icons/default-icons";
 import Pinned from "../pinned/pinned";
+import { RecipePostListType } from "../../pages/beranda/data";
 
 type PostCardProps = {
   isPinned?: boolean;
+  data: RecipePostListType;
 };
 
 const PostCard = (props: PostCardProps) => {
-  const { isPinned } = props;
+  const { isPinned, data } = props;
   return (
     <Stack px={`16px`} py={`12px`} borderBottom={`1px solid #EFF3F4`}>
       {isPinned ? <Pinned /> : ""}
       <HStack gap={`12px`} alignItems={`start`}>
-        <Box
-          w={`48px`}
-          aspectRatio={`1/1`}
-          position={`relative`}
-          rounded={`full`}
-          overflow={`hidden`}
-        >
-          <Image
-            style={{
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
-            src={ProfilePicture}
-            fill
-            alt="Profile Cover Images | Epicuran"
-          ></Image>
-        </Box>
+        <Link href={`/profile-user`}>
+          <Box
+            w={`44px`}
+            aspectRatio={`1/1`}
+            position={`relative`}
+            rounded={`full`}
+            overflow={`hidden`}
+          >
+            <Image
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
+              src={data.author.profilePictureUrl}
+              fill
+              alt="Profile Cover Images | Epicuran"
+            ></Image>
+          </Box>
+        </Link>
         <VStack alignItems={`start`} maxW={`90%`} gap={`19px`}>
           <VStack>
             <HStack justifyContent={`space-between`} w={`full`}>
               <HStack fontSize={`15px`}>
                 <Text color={`#0F1419`} fontWeight={`bold`}>
-                  Juna Rorimpandey
+                  {data.author.name}
                 </Text>
                 <Text color={`#536471`} fontWeight={`normal`}>
-                  @junarorimpa_ · Apr 10, 2023
+                  {data.author.username} · {data.createdAt}
                 </Text>
               </HStack>
               <Dotted3Icon color={`#536471`} />
             </HStack>
             <Text fontSize={`15px`} color={`#0F1419`}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consectetur culpa, porro velit suscipit, labore repellendus sint
-              cupiditate eaque eius alias possimus eos recusandae perferendis
-              dolores ipsum amet! Sint.
+              {data.content}
             </Text>
           </VStack>
           <HStack fontSize={`15px`}>
@@ -79,7 +79,7 @@ const PostCard = (props: PostCardProps) => {
                 objectFit: "cover",
                 objectPosition: "center",
               }}
-              src={`/images/post-1.jpeg`}
+              src={data.pictureUrl}
               fill
               alt="Profile Cover Images | Epicuran"
             ></Image>

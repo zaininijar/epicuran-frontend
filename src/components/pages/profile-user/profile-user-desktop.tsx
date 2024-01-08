@@ -1,5 +1,4 @@
 import {
-  ArrowLeftIcon,
   CoverImage,
   ProfilePicture,
   Dotted3Icon,
@@ -16,6 +15,8 @@ import { ProfileListData } from "@/components/general/sidebar-info/data";
 import { Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
+import { RecipePostList } from "../beranda/data";
+
 type Props = {};
 
 const ProfileUserDesktop = (props: Props) => {
@@ -174,10 +175,9 @@ const ProfileUserDesktop = (props: Props) => {
         </Text>
         <Box bg={`#FFA800`} h={`4px`} w={`56px`} borderRadius={`9999`}></Box>
       </VStack>
-      <PostCard isPinned />
-      <PostCard />
-      <PostCard />
-      <PostCard />
+      {RecipePostList.map((post, key) => (
+        <PostCard isPinned={post.isPinned} key={key} data={post} />
+      ))}
     </VStack>
   );
 };
