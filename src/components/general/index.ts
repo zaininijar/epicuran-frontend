@@ -11,6 +11,7 @@ import HeaderBeranda from './header-beranda/header-beranda';
 import PostRecipeArea from './post-recipe-area/post-recipe-area';
 export * from './images/index'
 export * from './icons/default-icons'
+export * from './illustration/index'
 
 export {
     Footer,

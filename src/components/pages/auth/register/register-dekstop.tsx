@@ -18,9 +18,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-type LoginDesktopProps = {};
+type RegisterDesktopProps = {};
 
-const LoginDesktop = (props: LoginDesktopProps) => {
+const RegisterDesktop = (props: RegisterDesktopProps) => {
   const toast = useToast();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -68,10 +68,54 @@ const LoginDesktop = (props: LoginDesktopProps) => {
               alt="Epicuran Logo"
             />
           </Box>
-          <Heading w="100%" color={`primary.500`} fontWeight="normal" mb="2%">
+          <Heading
+            fontSize={`30px`}
+            w="100%"
+            color={`primary.500`}
+            fontWeight="normal"
+            mb="2%"
+          >
             <Text>Hello,</Text>
-            <Text>Welcome Back</Text>
+            <Text>Please Register Here 😊</Text>
           </Heading>
+
+          <HStack w={`100%`}>
+            <FormControl mt="2%" w={`100%`}>
+              <FormLabel htmlFor="firstname" fontWeight={"normal"}>
+                First Name
+              </FormLabel>
+              <Input
+                rounded={`24px`}
+                _placeholder={{ color: "gray.500", fontSize: "14px" }}
+                border={`1px solid`}
+                borderColor={`secondary.300`}
+                _hover={{ border: "1px solid", borderColor: "secondary.400" }}
+                py={`24px`}
+                focusBorderColor="orange.300"
+                placeholder="ex: John"
+                id="firstname"
+                type="firstname"
+              />
+            </FormControl>
+            <FormControl mt="2%" w={`100%`}>
+              <FormLabel htmlFor="lastname" fontWeight={"normal"}>
+                Last Name
+              </FormLabel>
+              <Input
+                rounded={`24px`}
+                _placeholder={{ color: "gray.500", fontSize: "14px" }}
+                border={`1px solid`}
+                borderColor={`secondary.300`}
+                _hover={{ border: "1px solid", borderColor: "secondary.400" }}
+                py={`24px`}
+                focusBorderColor="orange.300"
+                placeholder="ex: Smith"
+                id="lastname"
+                type="lastname"
+              />
+            </FormControl>
+          </HStack>
+
           <FormControl mt="2%">
             <FormLabel htmlFor="username" fontWeight={"normal"}>
               Username
@@ -154,9 +198,9 @@ const LoginDesktop = (props: LoginDesktopProps) => {
               });
             }}
           >
-            Sign In
+            Sign Up
           </Button>
-          <Link href={`/auth/register`} style={{ width: "100%" }}>
+          <Link style={{ width: "100%" }} href={`/auth/login`}>
             <Button
               w="full"
               rounded={`24px`}
@@ -169,7 +213,7 @@ const LoginDesktop = (props: LoginDesktopProps) => {
               }}
               variant="outline"
             >
-              Sign Up
+              Already have an account
             </Button>
           </Link>
         </VStack>
@@ -178,4 +222,4 @@ const LoginDesktop = (props: LoginDesktopProps) => {
   );
 };
 
-export default LoginDesktop;
+export default RegisterDesktop;
