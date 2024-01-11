@@ -1,8 +1,16 @@
-import { CookIll, EyeCloseIcon, EyeOpenIcon, Logo } from "@/components";
 import {
+  ButtonProviderSignin,
+  CookIll,
+  EyeCloseIcon,
+  EyeOpenIcon,
+  Logo,
+} from "@/components";
+import {
+  AbsoluteCenter,
   Box,
   Button,
   Checkbox,
+  Divider,
   FormControl,
   FormLabel,
   HStack,
@@ -10,20 +18,25 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Stack,
   Text,
   VStack,
-  useToast,
 } from "@chakra-ui/react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 type LoginDesktopProps = {};
 
 const LoginDesktop = (props: LoginDesktopProps) => {
-  const toast = useToast();
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
+
+  const handleSignIn = async (provider: string) => {
+    signIn(provider);
+  };
 
   return (
     <>
@@ -68,11 +81,16 @@ const LoginDesktop = (props: LoginDesktopProps) => {
               alt="Epicuran Logo"
             />
           </Box>
-          <Heading w="100%" color={`primary.500`} fontWeight="normal" mb="2%">
-            <Text>Hello,</Text>
-            <Text>Welcome Back</Text>
+          <Heading
+            mt={`22px`}
+            mb={`18px`}
+            w="100%"
+            color={`primary.500`}
+            fontWeight="normal"
+          >
+            <Text fontSize={`24px`}>Jelajahi Dunia Penuh Rasa</Text>
           </Heading>
-          <FormControl mt="2%">
+          <FormControl>
             <FormLabel htmlFor="username" fontWeight={"normal"}>
               Username
             </FormLabel>
@@ -144,15 +162,6 @@ const LoginDesktop = (props: LoginDesktopProps) => {
             color={`white`}
             _hover={{ backgroundColor: "secondary.400" }}
             variant="solid"
-            onClick={() => {
-              toast({
-                title: "Account created.",
-                description: "We've created your account for you.",
-                status: "success",
-                duration: 3000,
-                isClosable: true,
-              });
-            }}
           >
             Sign In
           </Button>
@@ -172,6 +181,23 @@ const LoginDesktop = (props: LoginDesktopProps) => {
               Sign Up
             </Button>
           </Link>
+          <Stack w={`full`}>
+            <Box position="relative" padding="5">
+              <Divider bg={`primary.500`} />
+              <AbsoluteCenter px="4">OR</AbsoluteCenter>
+            </Box>
+          </Stack>
+          <ButtonProviderSignin
+            image="/images/icons/github.svg"
+            label="Continue With Github"
+            onClick={() => handleSignIn("github")}
+          ></ButtonProviderSignin>
+
+          <ButtonProviderSignin
+            image="/images/icons/google.svg"
+            label="Continue With Google"
+            onClick={() => handleSignIn("google")}
+          ></ButtonProviderSignin>
         </VStack>
       </HStack>
     </>

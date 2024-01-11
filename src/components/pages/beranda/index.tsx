@@ -3,6 +3,8 @@ import { SidebarInfo, SidebarMenu } from "@/components";
 import { HStack, VStack } from "@chakra-ui/react";
 import BerandaMobile from "./beranda-mobile";
 import BerandaDesktop from "./beranda-desktop";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 type BerandaProps = {
   isMobile: boolean;
@@ -10,6 +12,7 @@ type BerandaProps = {
 
 const Beranda = (props: BerandaProps) => {
   const { isMobile } = props;
+
   return isMobile ? (
     <HStack
       alignItems={`start`}

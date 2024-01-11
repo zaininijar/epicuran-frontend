@@ -26,7 +26,6 @@ export const getServerSideProps = async ({
   req,
 }: GetServerSidePropsContext) => {
   const isMobile = isMobileDevice(req.headers["user-agent"]);
-
   return {
     props: { isMobile },
   };

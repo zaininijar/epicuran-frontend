@@ -4,13 +4,14 @@ import React from "react";
 type ButtonPrimaryProps = {
   title: string;
   size?: string;
+  isDisabled?: boolean;
 };
 
 const ButtonPrimary = (props: ButtonPrimaryProps) => {
-  const { title, size } = props;
+  const { title, size, isDisabled } = props;
   return size == "sm" ? (
     <Stack
-      bg={`#FF6C2283`}
+      bg={isDisabled ? `#FF6C22` : `#FF6C2283`}
       color={`white`}
       px={`17px`}
       py={`7px`}

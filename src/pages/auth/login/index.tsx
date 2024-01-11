@@ -6,11 +6,19 @@ import type {
   GetServerSidePropsContext,
 } from "next";
 import { Login } from "@/components";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const LoginPage = (
   props: InferGetServerSidePropsType<typeof getServerSideProps>
 ) => {
   const { isMobile } = props;
+  const { data: session } = useSession();
+  const route = useRouter();
+
+  if (session) {
+    route.push("/");
+  }
 
   return (
     <>

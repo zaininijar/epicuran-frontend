@@ -74,6 +74,7 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
             color={`primary.500`}
             fontWeight="normal"
             mb="2%"
+            mt="6%"
           >
             <Text>Hello,</Text>
             <Text>Please Register Here 😊</Text>

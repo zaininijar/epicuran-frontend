@@ -1,6 +1,6 @@
 import { Box, HStack, Textarea, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { ProfilePicture } from "../images";
 import { ImageIcon } from "../icons/default-icons";
 import ButtonPrimary from "../buttons/button-primary";
@@ -8,10 +8,20 @@ import ButtonPrimary from "../buttons/button-primary";
 type PostRecipeAreaProps = {};
 
 const PostRecipeArea = (props: PostRecipeAreaProps) => {
+  const [isButtonDisabled, setButtonDisabled] = useState<boolean>(false);
+
   function autoGrow(e: HTMLTextAreaElement) {
     e.style.height = "5px";
     e.style.height = e.scrollHeight + "px";
   }
+
+  const handlePost = (e: HTMLTextAreaElement) => {
+    if (e.value.length > 4) {
+      setButtonDisabled(true);
+    } else {
+      setButtonDisabled(false);
+    }
+  };
 
   return (
     <HStack
@@ -43,6 +53,7 @@ const PostRecipeArea = (props: PostRecipeAreaProps) => {
         <Textarea
           onChange={(e) => {
             autoGrow(e.target);
+            handlePost(e.target);
           }}
           w={`full`}
           border={`none`}
@@ -67,7 +78,11 @@ const PostRecipeArea = (props: PostRecipeAreaProps) => {
             <ImageIcon color={`primary`} cursor={`pointer`} />
             <ImageIcon color={`primary`} cursor={`pointer`} />
           </HStack>
-          <ButtonPrimary title="Post Now" size="sm" />
+          <ButtonPrimary
+            isDisabled={isButtonDisabled}
+            title="Post Now"
+            size="sm"
+          />
         </HStack>
       </VStack>
     </HStack>

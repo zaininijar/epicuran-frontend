@@ -9,6 +9,8 @@ import { PostCard } from '@/components/general/cards';
 import HeaderProfile from './header-profile/header-profile';
 import HeaderBeranda from './header-beranda/header-beranda';
 import PostRecipeArea from './post-recipe-area/post-recipe-area';
+import ProfileButton from './buttons/profile-button.tsx/profile-button';
+import ButtonProviderSignin from './buttons/button-provider-signin';
 export * from './images/index'
 export * from './icons/default-icons'
 export * from './illustration/index'
@@ -24,5 +26,7 @@ export {
     PostCard,
     HeaderProfile,
     HeaderBeranda,
-    PostRecipeArea
+    PostRecipeArea,
+    ProfileButton,
+    ButtonProviderSignin
 }
