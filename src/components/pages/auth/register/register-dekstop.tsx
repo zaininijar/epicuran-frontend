@@ -206,14 +206,6 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
                 </Button>
               </InputRightElement>
             </InputGroup>
-            <HStack justifyContent={`space-between`} mt={`12px`}>
-              <Checkbox color={`gray.500`} colorScheme="orange">
-                <Text fontSize={`14px`}>Remember me</Text>
-              </Checkbox>
-              <Link href={`#`}>
-                <Text fontSize={`14px`}>Forgot password?</Text>
-              </Link>
-            </HStack>
           </FormControl>
           <Button
             mt={`24px`}
