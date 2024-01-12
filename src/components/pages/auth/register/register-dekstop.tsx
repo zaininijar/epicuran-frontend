@@ -54,7 +54,7 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
           w={`40%`}
           h={`100%`}
           py={`40px`}
-          px={`80px`}
+          px={`60px`}
         >
           <Box position={`absolute`} top={`0`} height={`100px`} width={`200px`}>
             <Image
@@ -69,12 +69,12 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
             />
           </Box>
           <Heading
-            fontSize={`30px`}
+            fontSize={`24px`}
             w="100%"
             color={`primary.500`}
-            fontWeight="normal"
+            fontWeight="bold"
             mb="2%"
-            mt="6%"
+            mt={`15%`}
           >
             <Text>Hello,</Text>
             <Text>Please Register Here 😊</Text>
@@ -82,7 +82,11 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
 
           <HStack w={`100%`}>
             <FormControl mt="2%" w={`100%`}>
-              <FormLabel htmlFor="firstname" fontWeight={"normal"}>
+              <FormLabel
+                fontSize={`14px`}
+                htmlFor="firstname"
+                fontWeight={"normal"}
+              >
                 First Name
               </FormLabel>
               <Input
@@ -99,7 +103,11 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
               />
             </FormControl>
             <FormControl mt="2%" w={`100%`}>
-              <FormLabel htmlFor="lastname" fontWeight={"normal"}>
+              <FormLabel
+                fontSize={`14px`}
+                htmlFor="lastname"
+                fontWeight={"normal"}
+              >
                 Last Name
               </FormLabel>
               <Input
@@ -118,7 +126,29 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
           </HStack>
 
           <FormControl mt="2%">
-            <FormLabel htmlFor="username" fontWeight={"normal"}>
+            <FormLabel fontSize={`14px`} htmlFor="email" fontWeight={"normal"}>
+              Email
+            </FormLabel>
+            <Input
+              rounded={`24px`}
+              _placeholder={{ color: "gray.500", fontSize: "14px" }}
+              border={`1px solid`}
+              borderColor={`secondary.300`}
+              _hover={{ border: "1px solid", borderColor: "secondary.400" }}
+              py={`24px`}
+              focusBorderColor="orange.300"
+              placeholder="ex: epicuran_user@example.com"
+              id="email"
+              type="username"
+            />
+          </FormControl>
+
+          <FormControl mt="2%">
+            <FormLabel
+              fontSize={`14px`}
+              htmlFor="username"
+              fontWeight={"normal"}
+            >
               Username
             </FormLabel>
             <Input
@@ -136,7 +166,12 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="password" fontWeight={"normal"} mt="2%">
+            <FormLabel
+              fontSize={`14px`}
+              htmlFor="password"
+              fontWeight={"normal"}
+              mt="2%"
+            >
               Password
             </FormLabel>
             <InputGroup size="md">

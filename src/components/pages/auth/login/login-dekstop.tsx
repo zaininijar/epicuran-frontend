@@ -67,7 +67,7 @@ const LoginDesktop = (props: LoginDesktopProps) => {
           w={`40%`}
           h={`100%`}
           py={`40px`}
-          px={`80px`}
+          px={`60px`}
         >
           <Box position={`absolute`} top={`0`} height={`100px`} width={`200px`}>
             <Image
@@ -82,17 +82,26 @@ const LoginDesktop = (props: LoginDesktopProps) => {
             />
           </Box>
           <Heading
-            mt={`22px`}
+            mt={`8%`}
             mb={`18px`}
             w="100%"
             color={`primary.500`}
             fontWeight="normal"
           >
-            <Text fontSize={`24px`}>Jelajahi Dunia Penuh Rasa</Text>
+            <Text fontSize={`24px`} fontWeight={`bold`}>
+              Hai,
+            </Text>
+            <Text fontSize={`24px`} fontWeight={`bold`}>
+              Jelajahi Dunia Penuh Rasa
+            </Text>
           </Heading>
           <FormControl>
-            <FormLabel htmlFor="username" fontWeight={"normal"}>
-              Username
+            <FormLabel
+              fontSize={`14px`}
+              htmlFor="username"
+              fontWeight={"normal"}
+            >
+              Username / Email
             </FormLabel>
             <Input
               rounded={`24px`}
@@ -109,7 +118,12 @@ const LoginDesktop = (props: LoginDesktopProps) => {
           </FormControl>
 
           <FormControl>
-            <FormLabel htmlFor="password" fontWeight={"normal"} mt="2%">
+            <FormLabel
+              fontSize={`14px`}
+              htmlFor="password"
+              fontWeight={"normal"}
+              mt="2%"
+            >
               Password
             </FormLabel>
             <InputGroup size="md">
@@ -154,7 +168,7 @@ const LoginDesktop = (props: LoginDesktopProps) => {
             </HStack>
           </FormControl>
           <Button
-            mt={`24px`}
+            mt={`18px`}
             w="full"
             rounded={`24px`}
             py={`24px`}
