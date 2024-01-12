@@ -1,9 +1,9 @@
 import { Box, HStack, Textarea, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import React, { useState } from "react";
-import { ProfilePicture } from "../images";
 import { ImageIcon } from "../icons/default-icons";
 import ButtonPrimary from "../buttons/button-primary";
+import { useSession } from "next-auth/react";
 
 type PostRecipeAreaProps = {};
 
@@ -14,6 +14,8 @@ const PostRecipeArea = (props: PostRecipeAreaProps) => {
     e.style.height = "5px";
     e.style.height = e.scrollHeight + "px";
   }
+
+  const { data: session } = useSession();
 
   const handlePost = (e: HTMLTextAreaElement) => {
     if (e.value.length > 4) {
@@ -44,7 +46,7 @@ const PostRecipeArea = (props: PostRecipeAreaProps) => {
             objectFit: "cover",
             objectPosition: "center",
           }}
-          src={ProfilePicture}
+          src={session?.user?.image ?? ""}
           fill
           alt="Profile Cover Images | Epicuran"
         ></Image>
