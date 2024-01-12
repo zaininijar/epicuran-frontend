@@ -1,8 +1,7 @@
-import { CookIll, EyeCloseIcon, EyeOpenIcon, Logo } from "@/components";
+import { CookIll2, EyeCloseIcon, EyeOpenIcon, Logo } from "@/components";
 import {
   Box,
   Button,
-  Checkbox,
   FormControl,
   FormLabel,
   HStack,
@@ -42,11 +41,11 @@ const RegisterDesktop = (props: RegisterDesktopProps) => {
           overflow={`hidden`}
           w={`60%`}
           h={`full`}
-          // border={`1px solid`}
           borderColor={`primary.50`}
+          // border={`1px solid`}
           // borderRadius={`24px`}
         >
-          <Image src={CookIll} fill alt="Login-Epicuran"></Image>
+          <Image src={CookIll2} fill alt="Login-Epicuran"></Image>
         </Box>
         <VStack
           alignItems={`start`}

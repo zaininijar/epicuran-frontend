@@ -1,6 +1,6 @@
 import {
   ButtonProviderSignin,
-  CookIll,
+  CookIll1,
   EyeCloseIcon,
   EyeOpenIcon,
   Logo,
@@ -59,7 +59,7 @@ const LoginDesktop = (props: LoginDesktopProps) => {
           borderColor={`primary.50`}
           // borderRadius={`24px`}
         >
-          <Image src={CookIll} fill alt="Login-Epicuran"></Image>
+          <Image src={CookIll1} fill alt="Login-Epicuran"></Image>
         </Box>
         <VStack
           alignItems={`start`}
