@@ -1,43 +1,76 @@
 export const RecipePostList: Array<RecipePostListType> = [
     {
         isPinned: true,
+        id: "EoAFbKlRZcVSeAseZSbAUfCGZOXMzx",
         author: {
             name: 'Ada Mu',
             username: '@ada_mu',
             profilePictureUrl: 'https://source.unsplash.com/random/VbURzqtzVHKgXRUxgOuizrH',
         },
-        pictureUrl: 'https://source.unsplash.com/random/ImvfBjEyxcUvGAGSRgiPmGX',
-        content: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa, porro velit suscipit, labore repellendus sint cupiditate eaque eius alias possimus eos recusandae perferendis dolores ipsum amet! Sint.
-
-        Get started here:
-        
-        https://example-url.com/recipe
+        pictureUrl: '/images/ill-11.jpeg',
+        content: `
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa, porro velit suscipit, labore repellendus sint cupiditate eaque eius alias possimus eos recusandae perferendis dolores ipsum amet! Sint.
+            <br/>
+            <br/>
+            Get started here:
+            <a style="color: #FFA800" href="https://example-url.com/recipe">https://example-url.com/recipe</a>
         `,
         liked: 5,
         commented: 3,
         createdAt: 'Apr 10, 2023'
     },
     {
+        id: "bhitfUpwGlYIHQiVGkogBrhwRYuBdfO",
         isPinned: false,
         author: {
             name: 'John Doe',
             username: '@john_doe',
             profilePictureUrl: 'https://source.unsplash.com/random/ABCD1234',
         },
-        pictureUrl: 'https://source.unsplash.com/random/5678EFGH',
+        pictureUrl: '/images/posts/Italian chicken.jpg',
         content: `Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.`,
         liked: 10,
         commented: 8,
-        createdAt: 'May 5, 2023'
+        createdAt: 'May 5, 2023',
+        detail: {
+            comments: [
+                {
+                    id: "wPtNWYdOGqKu",
+                    name: "Linnie Moreno",
+                    username: "@JeremiahMaxwell",
+                    profilePictureUrl: 'https://source.unsplash.com/random/ABCD1234',
+                    comment: "Nice recipe for creating a",
+                    createdAt: 'May 5, 2023',
+                    reply: [
+                        {
+                            name: "Rhoda Wallace",
+                            username: "@AngelWarner",
+                            comment: "Nice recipe for creating a",
+                            profilePictureUrl: 'https://source.unsplash.com/random/ABCD1234',
+                            createdAt: 'May 5, 2023',
+                        },
+                    ]
+                },
+                {
+                    id: "PUyAgEyprvnO",
+                    name: "Christina Sims",
+                    username: "@MarionCastro",
+                    comment: "Nice recipe for creating a",
+                    profilePictureUrl: 'https://source.unsplash.com/random/ABCD1234',
+                    createdAt: 'May 5, 2023',
+                }
+            ]
+        }
     },
     {
+        id: "EaxDUdJOlkgvkTnYEFitzOVjmKFPtWm",
         isPinned: false,
         author: {
             name: 'Jane Smith',
             username: '@jane_smith',
             profilePictureUrl: 'https://source.unsplash.com/random/EFGH5678',
         },
-        pictureUrl: 'https://source.unsplash.com/random/XYZ9876',
+        pictureUrl: '/images/posts/Salted Caramel.jpg',
         content: `Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
         liked: 15,
         commented: 7,
@@ -45,18 +78,20 @@ export const RecipePostList: Array<RecipePostListType> = [
     },
     {
         isPinned: true,
+        id: "BAmzuKLvFEuXFIaBchzkWDzZVFNwtu",
         author: {
             name: 'Sam Brown',
             username: '@sam_brown',
             profilePictureUrl: 'https://source.unsplash.com/random/UVWXYZ1234',
         },
-        pictureUrl: 'https://source.unsplash.com/random/1234UVWXYZ',
+        pictureUrl: 'https://img.taste.com.au/5osiH6Gx/w720-h480-cfill-q80/taste/2017/01/easy-thai-noodle-salad-120069-1.jpg',
         content: `Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.`,
         liked: 8,
         commented: 5,
         createdAt: 'Jul 15, 2023'
     },
     {
+        id: "GWrEYGCPrekwKQGeYvzCxcMEhrcoakj",
         isPinned: false,
         author: {
             name: 'Eva Green',
@@ -71,6 +106,7 @@ export const RecipePostList: Array<RecipePostListType> = [
     },
     {
         isPinned: true,
+        id: "qtDpfyLlauFCixhkwlwTmXBGqZaCJR",
         author: {
             name: 'Chris Taylor',
             username: '@chris_taylor',
@@ -84,6 +120,7 @@ export const RecipePostList: Array<RecipePostListType> = [
     },
 
     {
+        id: "liRJkjMkYCMWBWNGzhYLofSRsBqRknn",
         isPinned: false,
         author: {
             name: 'Michael White',
@@ -98,6 +135,7 @@ export const RecipePostList: Array<RecipePostListType> = [
     },
     {
         isPinned: true,
+        id: "korWnkrNzPlUaxPpMEPKdfdzSHLUNC",
         author: {
             name: 'Sophie Miller',
             username: '@sophie_miller',
@@ -110,6 +148,7 @@ export const RecipePostList: Array<RecipePostListType> = [
         createdAt: 'Nov 5, 2023'
     },
     {
+        id: "UOaUQgrMmNvnEPTyNqKmjVLKpHYFvDy",
         isPinned: false,
         author: {
             name: 'David Johnson',
@@ -126,6 +165,7 @@ export const RecipePostList: Array<RecipePostListType> = [
 
 export type RecipePostListType = {
     isPinned: boolean
+    id: string
     author: {
         name: string
         username: string
@@ -136,4 +176,23 @@ export type RecipePostListType = {
     liked: number
     commented: number
     createdAt: string
+    detail?: {
+        comments: CommentsType[]
+    }
+}
+
+export type CommentsType = {
+    id: string
+    name: string
+    username: string
+    comment: string
+    profilePictureUrl: string
+    createdAt: string
+    reply?: {
+        name: string
+        username: string
+        comment: string
+        profilePictureUrl: string
+        createdAt: string
+    }[]
 }

@@ -20,6 +20,7 @@ import ButtonPrimary from "../buttons/button-primary";
 import { Logo } from "../images";
 import PostModal from "../modal/post-modal";
 import ProfileButton from "../buttons/profile-button.tsx/profile-button";
+import Link from "next/link";
 
 type SidebarMenuDesktopProps = {
   user: {
@@ -27,10 +28,11 @@ type SidebarMenuDesktopProps = {
     email: string;
     image: string;
   } | null;
+  menuActive: string;
 };
 
 const SidebarMenuDesktop = (props: SidebarMenuDesktopProps) => {
-  const { user } = props;
+  const { user, menuActive } = props;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const modalProps = {
@@ -85,8 +87,14 @@ const SidebarMenuDesktop = (props: SidebarMenuDesktopProps) => {
             gap={`20px`}
           >
             <HomeIcon w={`26px`} h={`26px`} />
-            {JSON.stringify(user)}
-            <Text fontSize={`20px`}>Homess </Text>
+            <Text
+              as={Link}
+              href={`/`}
+              fontWeight={menuActive == "home" ? "bold" : "normal"}
+              fontSize={`20px`}
+            >
+              Home
+            </Text>
           </HStack>
           <HStack
             cursor={`pointer`}
@@ -134,7 +142,14 @@ const SidebarMenuDesktop = (props: SidebarMenuDesktopProps) => {
             gap={`20px`}
           >
             <ProfileIcon w={`26px`} h={`26px`} />
-            <Text fontSize={`20px`}>Profile</Text>
+            <Text
+              as={Link}
+              href={`/profile`}
+              fontWeight={menuActive == "profile" ? "bold" : "normal"}
+              fontSize={`20px`}
+            >
+              Profile
+            </Text>
           </HStack>
           <HStack
             cursor={`pointer`}

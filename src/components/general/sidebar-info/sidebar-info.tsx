@@ -4,11 +4,12 @@ import SidebarInfoDesktop from "./sidebar-info-desktop";
 
 type Props = {
   isMobile: boolean;
+  menu: string;
 };
 
 const SidebarInfo = (props: Props) => {
-  const { isMobile } = props;
-  return isMobile ? <SidebarInfoMobile /> : <SidebarInfoDesktop />;
+  const { isMobile, menu } = props;
+  return isMobile ? <SidebarInfoMobile /> : <SidebarInfoDesktop menu={menu} />;
 };
 
 export default SidebarInfo;

@@ -1,16 +1,15 @@
 import React from "react";
+import ProfileUserMobile from "./profile-mobile";
+import ProfileUserDesktop from "./profile-desktop";
 import { SidebarInfo, SidebarMenu } from "@/components";
 import { HStack, VStack } from "@chakra-ui/react";
-import BerandaMobile from "./beranda-mobile";
-import BerandaDesktop from "./beranda-desktop";
 
-type BerandaProps = {
+type ProfileUserProps = {
   isMobile: boolean;
 };
 
-const Beranda = (props: BerandaProps) => {
+const ProfileUser = (props: ProfileUserProps) => {
   const { isMobile } = props;
-
   return isMobile ? (
     <HStack
       alignItems={`start`}
@@ -20,11 +19,11 @@ const Beranda = (props: BerandaProps) => {
       overflow={`hidden`}
       height={`100vh`}
     >
-      <SidebarMenu isMobile={isMobile} menuActive={`home`} />
+      <SidebarMenu menuActive="profile" isMobile={isMobile} />
       <VStack overflow={`scroll`} scrollBehavior={`unset`} maxHeight={`100vh`}>
-        <BerandaMobile />
+        <ProfileUserMobile />
       </VStack>
-      <SidebarInfo menu={`home`} isMobile={isMobile} />
+      <SidebarInfo menu={`profile`} isMobile={isMobile} />
     </HStack>
   ) : (
     <HStack
@@ -33,11 +32,11 @@ const Beranda = (props: BerandaProps) => {
       mx={`auto`}
       gap={`0`}
     >
-      <SidebarMenu isMobile={isMobile} menuActive="home" />
-      <BerandaDesktop />
-      <SidebarInfo menu={`home`} isMobile={isMobile} />
+      <SidebarMenu menuActive="profile" isMobile={isMobile} />
+      <ProfileUserDesktop />
+      <SidebarInfo menu={`profile`} isMobile={isMobile} />
     </HStack>
   );
 };
 
-export default Beranda;
+export default ProfileUser;

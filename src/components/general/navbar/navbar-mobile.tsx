@@ -70,9 +70,9 @@ const NavbarMobileItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link href={child.href ?? "#"} key={child.label}>
-                <Box py={2}>{child.label}</Box>
-              </Link>
+              <Box py={2} key={child.label}>
+                <Link href={child.href ?? "#"}>{child.label}</Link>
+              </Box>
             ))}
         </Stack>
       </Collapse>

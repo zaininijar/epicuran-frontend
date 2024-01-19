@@ -5,12 +5,13 @@ import { useSession } from "next-auth/react";
 
 type Props = {
   isMobile: boolean;
+  menuActive: string;
 };
 
 const SidebarMenu = (props: Props) => {
   const { data: session } = useSession();
 
-  const { isMobile } = props;
+  const { isMobile, menuActive } = props;
 
   const newSidebarProps = {
     user:
@@ -19,6 +20,7 @@ const SidebarMenu = (props: Props) => {
         email: session?.user?.email ?? "",
         image: session?.user?.image ?? "",
       } ?? null,
+    menuActive,
   };
 
   return isMobile ? (

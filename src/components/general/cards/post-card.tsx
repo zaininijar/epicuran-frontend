@@ -11,6 +11,7 @@ import Link from "next/link";
 import { SavedIcon } from "../icons/default-icons";
 import Pinned from "../pinned/pinned";
 import { RecipePostListType } from "../../pages/beranda/data";
+import { useRouter } from "next/router";
 
 type PostCardProps = {
   isPinned?: boolean;
@@ -19,6 +20,12 @@ type PostCardProps = {
 
 const PostCard = (props: PostCardProps) => {
   const { isPinned, data } = props;
+  const router = useRouter();
+
+  const handleToDetailPost = () => {
+    return router.push(`/post/${data.author.username}/${data.id}`);
+  };
+
   return (
     <Stack px={`16px`} py={`12px`} borderBottom={`1px solid #EFF3F4`}>
       {isPinned ? <Pinned /> : ""}
@@ -55,18 +62,16 @@ const PostCard = (props: PostCardProps) => {
               </HStack>
               <Dotted3Icon color={`#536471`} />
             </HStack>
-            <Text fontSize={`15px`} color={`#0F1419`}>
-              {data.content}
-            </Text>
+            <Text
+              onClick={handleToDetailPost}
+              cursor={`pointer`}
+              dangerouslySetInnerHTML={{
+                __html: data.content,
+              }}
+              fontSize={`15px`}
+              color={`#0F1419`}
+            />
           </VStack>
-          <HStack fontSize={`15px`}>
-            <Text>Get started here: </Text>
-            <Box color={`primary`}>
-              <Link href={`https://example-url.com/recipe`}>
-                https://example-url.com/recipe
-              </Link>
-            </Box>
-          </HStack>
           <Box
             w={`100%`}
             height={`242px`}

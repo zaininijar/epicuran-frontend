@@ -19,11 +19,11 @@ const ProfileUser = (props: ProfileUserProps) => {
       overflow={`hidden`}
       height={`100vh`}
     >
-      <SidebarMenu isMobile={isMobile} />
+      <SidebarMenu menuActive={`profile-user`} isMobile={isMobile} />
       <VStack overflow={`scroll`} scrollBehavior={`unset`} maxHeight={`100vh`}>
         <ProfileUserMobile />
       </VStack>
-      <SidebarInfo isMobile={isMobile} />
+      <SidebarInfo menu={`profile-user`} isMobile={isMobile} />
     </HStack>
   ) : (
     <HStack
@@ -32,9 +32,9 @@ const ProfileUser = (props: ProfileUserProps) => {
       mx={`auto`}
       gap={`0`}
     >
-      <SidebarMenu isMobile={isMobile} />
+      <SidebarMenu menuActive={`profile-user`} isMobile={isMobile} />
       <ProfileUserDesktop />
-      <SidebarInfo isMobile={isMobile} />
+      <SidebarInfo menu={`profile-user`} isMobile={isMobile} />
     </HStack>
   );
 };
