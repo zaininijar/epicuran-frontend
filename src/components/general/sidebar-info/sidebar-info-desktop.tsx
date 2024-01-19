@@ -11,9 +11,12 @@ type SidebarInfoDesktopProps = {
 
 const SidebarInfoDesktop = (props: SidebarInfoDesktopProps) => {
   const { menu } = props;
+
+  const isUserRecomnd = menu == "profile" || menu == "profile-user";
+
   return (
     <VStack height={`100vh`} paddingY={`1.5rem`} px={`32px`} mt={`38px`}>
-      {menu == "profile" && (
+      {isUserRecomnd && (
         <VStack
           alignItems={`start`}
           gap={`25px`}

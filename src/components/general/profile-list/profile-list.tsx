@@ -34,14 +34,14 @@ const ProfileList = (props: ProfileListProps) => {
               objectFit: "cover",
               objectPosition: "center",
             }}
-            src={picture_path}
+            src={`https://ui-avatars.com/api/?name=${name}&uppercase=false&background=random`}
             fill
             alt="Profile Cover Images | Epicuran"
           ></Image>
         </Box>
         <Box fontSize={`15px`}>
           <Text fontWeight={`bold`} color={`#0F1419`}>
-            {name}
+            {name.substring(0, 12)}
           </Text>
           <Text color={`#536471`} fontWeight={`400`}>
             {username}

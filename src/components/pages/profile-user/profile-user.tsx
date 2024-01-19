@@ -3,6 +3,8 @@ import ProfileUserMobile from "./profile-user-mobile";
 import ProfileUserDesktop from "./profile-user-desktop";
 import { SidebarInfo, SidebarMenu } from "@/components";
 import { HStack, VStack } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { ProfileListData } from "@/components/general/sidebar-info/data";
 
 type ProfileUserProps = {
   isMobile: boolean;
@@ -10,6 +12,11 @@ type ProfileUserProps = {
 
 const ProfileUser = (props: ProfileUserProps) => {
   const { isMobile } = props;
+
+  const router = useRouter();
+  const username = router.query.username;
+  const userDetail = ProfileListData.find((user) => user.username === username);
+
   return isMobile ? (
     <HStack
       alignItems={`start`}
@@ -33,7 +40,7 @@ const ProfileUser = (props: ProfileUserProps) => {
       gap={`0`}
     >
       <SidebarMenu menuActive={`profile-user`} isMobile={isMobile} />
-      <ProfileUserDesktop />
+      <ProfileUserDesktop data={userDetail} />
       <SidebarInfo menu={`profile-user`} isMobile={isMobile} />
     </HStack>
   );

@@ -11,15 +11,22 @@ import {
   PostCard,
   HeaderProfile,
 } from "@/components";
-import { ProfileListData } from "@/components/general/sidebar-info/data";
+import {
+  ProfileListData,
+  ProfileListDataType,
+} from "@/components/general/sidebar-info/data";
 import { Box, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import { RecipePostList } from "../beranda/data";
 
-type Props = {};
+type ProfileUserDesktopProps = {
+  data?: ProfileListDataType;
+};
 
-const ProfileUserDesktop = (props: Props) => {
+const ProfileUserDesktop = (props: ProfileUserDesktopProps) => {
+  const { data } = props;
+
   return (
     <VStack
       alignItems={`start`}
@@ -36,7 +43,7 @@ const ProfileUserDesktop = (props: Props) => {
             objectFit: "cover",
             objectPosition: "center",
           }}
-          src={CoverImage}
+          src={data?.coverImageUrl ?? ""}
           fill
           alt="Profile Cover Images | Epicuran"
         ></Image>
@@ -63,7 +70,7 @@ const ProfileUserDesktop = (props: Props) => {
               objectFit: "cover",
               objectPosition: "center",
             }}
-            src={ProfilePicture}
+            src={`https://ui-avatars.com/api/?name=${data?.username}&uppercase=false&background=random`}
             fill
             alt="Profile Cover Images | Epicuran"
           ></Image>
@@ -85,20 +92,16 @@ const ProfileUserDesktop = (props: Props) => {
         <Box>
           <HStack>
             <Text fontSize={`20px`} fontWeight={`bold`}>
-              Juna Rorimpandey
+              {data?.name}
             </Text>
             <CheckedIcon />
           </HStack>
           <Text color={`#536471`} fontWeight={`normal`} fontSize={`15px`}>
-            @junarorimpa_
+            {data?.username}
           </Text>
         </Box>
         <Text color={`#0F1419`} fontWeight={`normal`} fontSize={`15px`}>
-          I am Chef Juna Rorimpandey, a renowned chef born on July 20, 1975.
-          Widely known for my culinary expertise, I believe each dish tells a
-          unique story, inspiring my creative culinary explorations. Beyond the
-          kitchen, I enjoy sharing culinary knowledge through various shows and
-          social engagements.
+          {data?.desc}
         </Text>
         <HStack gap={`12px`}>
           <HStack>
@@ -110,7 +113,7 @@ const ProfileUserDesktop = (props: Props) => {
           <HStack>
             <LinkIcon />
             <Text color={`#FFA800`} fontWeight={`normal`} fontSize={`15px`}>
-              juna.com
+              {data?.username}
             </Text>
           </HStack>
           <HStack>

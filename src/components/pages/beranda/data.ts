@@ -3,8 +3,8 @@ export const RecipePostList: Array<RecipePostListType> = [
         isPinned: true,
         id: "EoAFbKlRZcVSeAseZSbAUfCGZOXMzx",
         author: {
-            name: 'Ada Mu',
-            username: '@ada_mu',
+            name: 'Alexius Kenriko Salim',
+            username: '@alexkriko',
             profilePictureUrl: 'https://source.unsplash.com/random/VbURzqtzVHKgXRUxgOuizrH',
         },
         pictureUrl: 'https://img.taste.com.au/qRDdmfsk/w720-h480-cfill-q80/taste/2022/09/healthy-tacos-recipe-181113-1.jpg',
@@ -23,8 +23,8 @@ export const RecipePostList: Array<RecipePostListType> = [
         id: "bhitfUpwGlYIHQiVGkogBrhwRYuBdfO",
         isPinned: false,
         author: {
-            name: 'John Doe',
-            username: '@john_doe',
+            name: 'Habib Erdian',
+            username: '@habiberdian',
             profilePictureUrl: 'https://source.unsplash.com/random/ABCD1234',
         },
         pictureUrl: '/images/posts/Italian chicken.jpg',

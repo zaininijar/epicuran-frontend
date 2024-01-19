@@ -30,7 +30,7 @@ const PostCard = (props: PostCardProps) => {
     <Stack px={`16px`} py={`12px`} borderBottom={`1px solid #EFF3F4`}>
       {isPinned ? <Pinned /> : ""}
       <HStack gap={`12px`} alignItems={`start`}>
-        <Link href={`/profile-user`}>
+        <Link href={`/profile-user/${data.author.username}`}>
           <Box
             w={`44px`}
             aspectRatio={`1/1`}
