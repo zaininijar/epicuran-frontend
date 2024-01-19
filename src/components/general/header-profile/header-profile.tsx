@@ -4,10 +4,14 @@ import { ArrowLeftIcon } from "../icons/default-icons";
 import { useRouter } from "next/router";
 import InputSearch from "../text-input/input-search";
 
-type Props = {};
+type HeaderProfileProps = {
+  name: string;
+};
 
-const HeaderProfile = (props: Props) => {
+const HeaderProfile = (props: HeaderProfileProps) => {
   const router = useRouter();
+
+  const { name } = props;
 
   return (
     <HStack
@@ -29,7 +33,7 @@ const HeaderProfile = (props: Props) => {
         </Box>
         <Box>
           <Text fontSize={`20px`} fontWeight={`bold`}>
-            Juna Rorimpandey
+            {name}
           </Text>
           <Text fontSize={`13px`} fontWeight={`400`} mt={`3px`}>
             743 Recipe

@@ -36,7 +36,7 @@ const ProfileUserDesktop = (props: ProfileUserDesktopProps) => {
       mt={`65px`}
       borderRight={`1px solid #EFF3F4`}
     >
-      <HeaderProfile />
+      <HeaderProfile name={data?.name ?? ""} />
       <Box position={`relative`} w={`100%`} height={`199px`}>
         <Image
           style={{
