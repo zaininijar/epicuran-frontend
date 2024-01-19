@@ -43,7 +43,7 @@ const PostCard = (props: PostCardProps) => {
                 objectFit: "cover",
                 objectPosition: "center",
               }}
-              src={data.author.profilePictureUrl}
+              src={`https://ui-avatars.com/api/?name=${data.author.name}&uppercase=false&background=random`}
               fill
               alt="Profile Cover Images | Epicuran"
             ></Image>
