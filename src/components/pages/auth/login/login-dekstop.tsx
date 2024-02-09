@@ -25,13 +25,34 @@ import {
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 type LoginDesktopProps = {};
 
 const LoginDesktop = (props: LoginDesktopProps) => {
   const [show, setShow] = useState(false);
+  const [email, setEmail] = useState<string>();
+  const [password, setPassword] = useState<string>();
+  const { push } = useRouter();
+
+  const handleLoginCredentials = async () => {
+    try {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: email,
+        password: password,
+        callbackUrl: "/",
+      });
+
+      if (!res?.error) {
+        push("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleClick = () => setShow(!show);
 
   const handleSignIn = async (provider: string) => {
@@ -114,6 +135,10 @@ const LoginDesktop = (props: LoginDesktopProps) => {
               placeholder="ex: epicuran_user001"
               id="username"
               type="username"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              value={email}
             />
           </FormControl>
 
@@ -139,6 +164,10 @@ const LoginDesktop = (props: LoginDesktopProps) => {
                 py={`24px`}
                 focusBorderColor="orange.300"
                 pr="4.5rem"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                value={password}
                 type={show ? "text" : "password"}
                 placeholder="* * * * * * * * * * * * * *"
               />
@@ -176,6 +205,7 @@ const LoginDesktop = (props: LoginDesktopProps) => {
             color={`white`}
             _hover={{ backgroundColor: "secondary.400" }}
             variant="solid"
+            onClick={() => handleLoginCredentials()}
           >
             Sign In
           </Button>
